@@ -36,7 +36,7 @@ public class Login {
 		driver.findElement(LoginPage.sign_in_buttn).click();
 		Assert.assertEquals(driver.findElement(UserPage.error_msg).getText(), "Invalid login or password.");
 	}
-	@DataProvider
+	@DataProvider(parallel=true)
 	public Object[][] negative_data(){
 		return new Object[][] {
 			{"email1@gmail.com","password"},
